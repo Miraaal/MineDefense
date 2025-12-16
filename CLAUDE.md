@@ -1,45 +1,45 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+이 파일은 Claude Code(claude.ai/code)가 이 저장소에서 작업할 때 참고하는 가이드입니다.
 
-## Project Overview
+## 프로젝트 개요
 
-**MineDefense** is a hybrid maze exploration + tower defense game prototype being developed as a portfolio project by a 2-person team. The core gameplay loop involves simultaneous multitasking:
-- **Left hand (keyboard)**: Navigate maze with arrow keys and mine resources
-- **Right hand (mouse)**: Place towers/barricades to defend against monsters
+**MineDefense**는 미로 탐험과 타워 디펜스가 결합된 하이브리드 게임 프로토타입입니다. 2인 팀이 포트폴리오용으로 개발 중이며, 핵심 게임플레이는 동시 멀티태스킹입니다:
+- **왼손(키보드)**: 방향키로 미로 이동 및 자원 채굴
+- **오른손(마우스)**: 타워/바리케이드 배치로 몬스터 방어
 
-This is an early-stage prototype focusing on core mechanics before detailed balancing and UI work.
+현재 초기 프로토타입 단계로, 밸런싱과 UI 작업 전에 핵심 메커니즘 구현에 집중하고 있습니다.
 
-## Development Environment
+## 개발 환경
 
-- **Unity Version**: 6000.2.8f1 (Unity 6)
-- **Render Pipeline**: Universal Render Pipeline (URP)
-- **Input System**: New Unity Input System (version 1.14.2)
-- **Key Packages**:
-  - `com.unity.ai.navigation` (2.0.9) - For pathfinding
-  - `com.unity.inputsystem` (1.14.2) - For input handling
-  - `com.unity.render-pipelines.universal` (17.2.0) - URP rendering
+- **Unity 버전**: 6000.2.8f1 (Unity 6)
+- **렌더 파이프라인**: Universal Render Pipeline (URP)
+- **입력 시스템**: New Unity Input System (version 1.14.2)
+- **주요 패키지**:
+  - `com.unity.ai.navigation` (2.0.9) - 경로 찾기용
+  - `com.unity.inputsystem` (1.14.2) - 입력 처리용
+  - `com.unity.render-pipelines.universal` (17.2.0) - URP 렌더링
 
-## Core Systems to Implement
+## 구현할 핵심 시스템
 
-The prototype aims to implement these 5 core systems (currently in planning/early development):
+프로토타입에서 구현할 5가지 핵심 시스템 (현재 기획/초기 개발 단계):
 
-1. **Procedural Maze Generation**: Generate maze maps procedurally
-2. **Monster AI**: Monster spawning and pathfinding (likely A* algorithm)
-3. **Tower System**: Tower placement and automatic attack mechanics
-4. **Barricade System**: Placeable obstacles that block monster movement
-5. **Player Movement**: Keyboard-based movement controls
+1. **절차적 미로 생성**: 미로 맵 자동 생성
+2. **몬스터 AI**: 몬스터 생성 및 경로 찾기 (A* 알고리즘 예정)
+3. **타워 시스템**: 타워 배치 및 자동 공격 메커니즘
+4. **바리케이드 시스템**: 몬스터 이동을 차단하는 장애물 배치
+5. **플레이어 이동**: 키보드 기반 이동 컨트롤
 
-## Git Workflow
+## Git 워크플로우
 
-**IMPORTANT**: When committing code changes, always update `박진석_개발일지.md`:
+**중요**: 코드 변경사항을 커밋할 때는 반드시 `박진석_개발일지.md`를 업데이트해야 합니다:
 
-1. Commit your code changes first
-2. Update `박진석_개발일지.md` with today's date (`## YYYY-MM-DD`) and a brief bullet list of what was done
-3. Commit the updated development log
-4. Push both commits together
+1. 코드 변경사항을 먼저 커밋
+2. `박진석_개발일지.md`에 오늘 날짜(`## YYYY-MM-DD`)와 작업 내용을 간단히 기록
+3. 업데이트된 개발일지를 커밋
+4. 두 커밋을 함께 푸시
 
-Example development log entry:
+개발일지 작성 예시:
 ```markdown
 ## 2025-12-16
 
@@ -47,21 +47,23 @@ Example development log entry:
 - Git 저장소 초기화 및 GitHub 연동
 ```
 
-Keep entries concise - just bullet points of completed work.
+간결하게 작성 - 완료한 작업을 불렛 포인트로만 나열합니다.
 
-## Project Structure
+**주의**: 사용자가 명시적으로 "커밋해줘", "푸시해줘"라고 요청하기 전까지는 절대 커밋/푸시하지 마세요.
+
+## 프로젝트 구조
 
 ```
 Assets/
-├── Scenes/          # Game scenes
-├── Scripts/         # All C# game scripts (currently minimal)
-└── Settings/        # URP and rendering configuration
+├── Scenes/          # 게임 씬
+├── Scripts/         # 모든 C# 게임 스크립트 (현재 최소한의 내용)
+└── Settings/        # URP 및 렌더링 설정
 ```
 
-All game code goes in `Assets/Scripts/`. Currently contains only a placeholder `Test.cs`.
+모든 게임 코드는 `Assets/Scripts/`에 위치합니다. 현재는 플레이스홀더인 `Test.cs`만 있습니다.
 
-## Architecture Notes
+## 아키텍처 노트
 
-- This is a greenfield Unity 6 project - architecture patterns are not yet established
-- Team is in the planning phase; detailed system design will emerge during prototype development
-- Focus is on getting core mechanics working before optimization or architectural refinement
+- Unity 6 신규 프로젝트로 아키텍처 패턴은 아직 확립되지 않음
+- 팀이 기획 단계에 있으며, 자세한 시스템 디자인은 프로토타입 개발 중 결정 예정
+- 최적화나 아키텍처 개선보다 핵심 메커니즘 동작에 집중
